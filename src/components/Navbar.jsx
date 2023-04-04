@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const loginMenu = ["Student", "Admin"];
   const registerMenu = ["Student", "Admin"];
@@ -8,19 +9,14 @@ const Navbar = () => {
       Placement Portal
       <ul className="navbar-items">
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li className="login-class">
           <div className="dropdown">
             <a className="dropbtn">Login</a>
             <div className="dropdown-content">
-              {loginMenu.map((item) => {
-                return (
-                  <a key={item} href="/">
-                    {item}
-                  </a>
-                );
-              })}
+              <Link to="/login/student">Student</Link>
+              <Link to="/login/admin">Admin</Link>
             </div>
           </div>
         </li>

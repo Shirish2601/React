@@ -174,8 +174,8 @@ const Statistics = (props) => {
   ];
   return (
     <Table
-      ugData={props.value === "2023" ? ugData : ugData2022}
-      pgData={props.value === "2023" ? pgData : pgData2022}
+      ugData={props.value === "2022" ? ugData2022 : ugData}
+      pgData={props.value === "2022" ? pgData2022 : pgData}
     />
     // <Table ugData={ugData} pgData={pgData} />
     // <>
