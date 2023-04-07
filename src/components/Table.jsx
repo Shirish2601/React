@@ -33,7 +33,7 @@ const Table = (props) => {
         </table>
       </div>
       <div className="statistics statistics-pg">
-        <h3 className="pg">PG Placement Statistics 2022-23</h3>
+        <h3 className="pg">PG Placement Statistics {props.year}</h3>
         <table>
           <tbody>
             <tr>
