@@ -3,7 +3,7 @@ import "./Home.css";
 const Home = () => {
   return (
     <main className="main-img">
-      <img src="src\assets\placementImg.svg" />
+      <img className="img-class" src="src\assets\placementImg.svg" />
     </main>
   );
 };
