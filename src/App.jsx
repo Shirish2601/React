@@ -2,6 +2,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Welcome from "./components/Welcome";
 import LoginPage from "./pages/LoginPage";
+import Home from "./components/Home";
 import {
   BrowserRouter as Router,
   Route,
@@ -13,6 +14,9 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
         <Route path="/about" exact>
           <Welcome />
         </Route>
