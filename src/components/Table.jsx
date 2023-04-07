@@ -2,7 +2,7 @@ const Table = (props) => {
   return (
     <>
       <div className="statistics">
-        <h3>UG Placement Statistics 2022-23</h3>
+        <h3>UG Placement Statistics {props.year}</h3>
         <table>
           <tbody>
             <tr>
