@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import "./Welcome.css";
-import Statistics from "./Statistics";
 import { Link } from "react-router-dom";
+
+import Statistics from "./Statistics";
+import Footer from "./Footer";
+
+import "./Welcome.css";
 const Welcome = () => {
   const [year, setYear] = useState("2023");
   return (
@@ -23,6 +26,7 @@ const Welcome = () => {
         </div>
       </div>
       <Statistics value={year} />
+      <Footer />
     </>
   );
 };
