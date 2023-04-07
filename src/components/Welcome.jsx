@@ -15,12 +15,8 @@ const Welcome = () => {
           <div className="dropdown">
             <button className="btn">Placement Statistics</button>
             <div className="dropdown-content">
-              <Link to="/" onClick={() => setYear("2023")}>
-                Placement 2022-23
-              </Link>
-              <Link to="/" onClick={() => setYear("2022")}>
-                Placement 2021-22
-              </Link>
+              <Link onClick={() => setYear("2023")}>Placement 2022-23</Link>
+              <Link onClick={() => setYear("2022")}>Placement 2021-22</Link>
             </div>
           </div>
         </div>

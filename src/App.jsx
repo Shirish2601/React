@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route path="/" exact>
+        <Route path="/about" exact>
           <Welcome />
         </Route>
         <Route path="/login/student/" exact>
