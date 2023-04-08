@@ -67,7 +67,7 @@
   text-decoration: none;
 }
 
-@keyframes moveUp {
+/* @keyframes moveUp {
   0% {
     transform: translateY(0);
   }
@@ -81,4 +81,4 @@
 
 .wrapper img {
   animation: moveUp 2s ease-in-out infinite;
-}
+} */
