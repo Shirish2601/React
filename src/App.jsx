@@ -9,6 +9,7 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
+import RegisterPage from "./pages/RegisterPage";
 function App() {
   return (
     <Router>
@@ -25,6 +26,9 @@ function App() {
         </Route>
         <Route path="/login/admin/" exact>
           <LoginPage user={"admin"} />
+        </Route>
+        <Route path="/register/student" exact>
+          <RegisterPage />
         </Route>
       </Switch>
       <Redirect to="/" />

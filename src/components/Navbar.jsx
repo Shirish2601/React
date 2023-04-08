@@ -24,13 +24,8 @@ const Navbar = () => {
           <div className="dropdown">
             <a className="dropbtn">Register</a>
             <div className="dropdown-content">
-              {registerMenu.map((item) => {
-                return (
-                  <a key={item} href="/">
-                    {item}
-                  </a>
-                );
-              })}
+              <Link to="/register/student">Student</Link>
+              <Link to="/register/admin">Admin</Link>
             </div>
           </div>
         </li>
