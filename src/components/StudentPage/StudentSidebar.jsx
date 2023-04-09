@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/auth-context";
-import "./StudentHome.css";
-const StudentHome = () => {
+import "./StudentSidebar.css";
+const StudentSidebar = () => {
   const ctx = useContext(AuthContext);
   const logOutHandler = () => {
     ctx.logout();
@@ -81,7 +81,7 @@ const StudentHome = () => {
           </div>
 
           <div className="bottom-content">
-            <li className="">
+            <li className="" onClick={logOutHandler}>
               <a href="#">
                 <i className="fa-solid fa-arrow-right-from-bracket icon"></i>
                 <span className="text nav-text">Logout</span>
@@ -90,10 +90,8 @@ const StudentHome = () => {
           </div>
         </div>
       </nav>
-
-      {/* <button onClick={logOutHandler}>LogOut</button>; */}
     </>
   );
 };
 
-export default StudentHome;
+export default StudentSidebar;

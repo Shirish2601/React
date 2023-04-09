@@ -1,7 +1,13 @@
 import React from "react";
-import StudentHome from "../components/StudentPage/StudentHome";
+import StudentSidebar from "../components/StudentPage/StudentSidebar";
+import StudentProfile from "../components/StudentPage/StudentProfile";
 const StudentPage = () => {
-  return <StudentHome />;
+  return (
+    <>
+      <StudentSidebar />
+      <StudentProfile />
+    </>
+  );
 };
 
 export default StudentPage;
