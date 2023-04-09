@@ -7,7 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-public/fontawesome-free-6.4.0-web
+public/**/fontawesome-free-6.4.0-web
 node_modules
 dist
 dist-ssr
