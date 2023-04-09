@@ -43,7 +43,7 @@
   padding-left: 10px;
 }
 
-.login button {
+.user-login__button {
   width: 300px;
   height: 40px;
   border: 1px solid #364fc7;
@@ -57,8 +57,8 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.login button:active,
-.login button:hover {
+.user-login__button:active,
+.user-login__button:hover {
   background-color: #4c6ef5;
   color: white;
 }
