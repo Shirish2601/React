@@ -8,7 +8,10 @@ const UserLogin = (props) => {
       <form className="login">
         <h2>Welcome, {props.userRole === "student" ? "Student" : "Admin"}!</h2>
         <p>Please log in</p>
-        <input type="text" placeholder="PRN" />
+        <input
+          type="text"
+          placeholder={props.userRole === "student" ? "PRN" : "Email"}
+        />
         <input type="password" placeholder="Password" />
         <button type="submit">Log in</button>
         <div className="links">
