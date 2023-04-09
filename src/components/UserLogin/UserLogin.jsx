@@ -1,9 +1,12 @@
-import React, { useRef, useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import React, { useContext, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./UserLogin.css";
-
+import ImagePath from "../../assets/LoginImageArt.svg";
+import { AuthContext } from "../context/auth-context";
 const UserLogin = (props) => {
+  const ctx = useContext(AuthContext);
+
   const emailRef = useRef();
   const passwordRef = useRef();
   const [authorized, setAuthorized] = useState(false);
@@ -19,6 +22,8 @@ const UserLogin = (props) => {
       emailRef.current.value === "abc" &&
       passwordRef.current.value === "abc"
     ) {
+      ctx.login();
+      ctx.isLoggedIn = true;
       userData.authorized = true;
     } else {
       userData.authorized = false;
@@ -30,7 +35,7 @@ const UserLogin = (props) => {
 
   return (
     <div className="wrapper">
-      <img src="..\src\assets\LoginImageArt.svg" alt="Login Image" />
+      <img src={ImagePath} alt="Login Image" />
       <form className="login">
         <h2>Welcome, {props.userRole === "student" ? "Student" : "Admin"}!</h2>
         <p>Please log in</p>
@@ -47,8 +52,6 @@ const UserLogin = (props) => {
         >
           Log in
         </button>
-        {authorized && <Redirect to="/student/" />}
-        {!authorized && <Redirect to="/login/student/" />}
         <div className="links">
           <Link to="/">Forgot password ?</Link>
         </div>

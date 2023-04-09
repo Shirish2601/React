@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { AuthContext } from "./context/auth-context";
 const Navbar = () => {
-  const loginMenu = ["Student", "Admin"];
-  const registerMenu = ["Student", "Admin"];
+  const ctx = useContext(AuthContext);
+
   return (
     <nav className="navbar">
-      Placement Portal
-      <ul className="navbar-items">
+      <div
+        className={ctx.isLoggedIn ? "placement-title user" : "placement-title"}
+      >
+        Placement Portal
+      </div>
+      <ul className={ctx.isLoggedIn ? "navbar-items hidden" : "navbar-items"}>
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -36,4 +41,5 @@ const Navbar = () => {
     </nav>
   );
 };
+
 export default Navbar;

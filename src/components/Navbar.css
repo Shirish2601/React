@@ -1,3 +1,10 @@
+.placement-title {
+  font-weight: 600;
+}
+.placement-title.user {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
 .navbar {
   position: relative;
   top: 0;
@@ -21,7 +28,9 @@
   display: flex;
   justify-content: space-between;
 }
-
+.navbar-items.hidden {
+  display: none;
+}
 .login-class {
   position: relative;
   display: inline-block;
