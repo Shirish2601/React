@@ -21,31 +21,41 @@ const StudentProfile = () => {
           <br />
           <span>B.Tech, Computer Science and Engineering</span>
         </h3>
-        <ul>
+        <ul className="student-profile-link">
           <li>
-            <i className="fa-solid fa-user student-profile__icon"></i>
-            <a href="#">My profile</a>
+            <a href="#">
+              <i className="fa-solid fa-user student-profile__icon"></i>
+              <span>My profile</span>
+            </a>
           </li>
           <li>
-            <i className="fa-solid fa-pen-to-square student-profile__icon"></i>
-            <a href="#">Edit profile</a>
+            <a href="#">
+              <i className="fa-solid fa-pen-to-square student-profile__icon"></i>
+              <span>Edit profile</span>
+            </a>
           </li>
           <li>
-            <i className="fa-solid fa-bell student-profile__icon"></i>
-            <a href="#">My Notifications</a>
+            <a href="#">
+              <i className="fa-solid fa-bell student-profile__icon"></i>
+              <span>My Notifications</span>
+            </a>
           </li>
           <li>
-            <i className="fa-solid fa-bullhorn student-profile__icon"></i>
-            <a href="#">Annoucements</a>
+            <a href="#">
+              <i className="fa-solid fa-bullhorn student-profile__icon"></i>
+              <span>Annoucements</span>
+            </a>
           </li>
           <li>
-            <i className="fa-solid fa-gear student-profile__icon"></i>
-            <a href="#">Account Settings</a>
+            <a href="#">
+              <i className="fa-solid fa-gear student-profile__icon"></i>
+              <span>Account Settings</span>
+            </a>
           </li>
           <li>
-            <i className="fa-solid fa-arrow-right-from-bracket student-profile__icon"></i>
             <a href="#" onClick={logOutHandler}>
-              Logout
+              <i className="fa-solid fa-arrow-right-from-bracket student-profile__icon"></i>
+              <span>Logout</span>
             </a>
           </li>
         </ul>
