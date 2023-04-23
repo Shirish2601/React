@@ -1,8 +1,9 @@
 import React from "react";
 import HomeStyles from "./StudentHome.module.css";
+import "./../common.css";
 const StudentHome = () => {
   return (
-    <div className={HomeStyles["active-drive"]}>
+    <div className={`${HomeStyles["active-drive"]} marginleft`}>
       <h3>Active Drives</h3>
       <div className="card">
         <img

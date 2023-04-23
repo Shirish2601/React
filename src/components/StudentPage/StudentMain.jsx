@@ -5,7 +5,7 @@ const StudentMain = () => {
   // right side student resume
   // edit profile option
   return (
-    <div className="studentmain-container">
+    <div className="studentmain-container marginleft">
       <div>
         <h3>Student Profile</h3>
         <div className="studentmain-profile">

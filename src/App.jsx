@@ -1,3 +1,4 @@
+import React, { useCallback, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Welcome from "./components/Welcome";
@@ -11,9 +12,12 @@ import {
 } from "react-router-dom";
 import RegisterPage from "./pages/RegisterPage";
 import { AuthContext } from "./components/context/auth-context";
-import React, { useCallback, useState } from "react";
 import StudentSidebar from "./components/StudentPage/StudentSidebar";
 import StudentProfile from "./components/StudentPage/StudentProfile";
+import ViewCompany from "./components/Company/ViewCompany";
+import CompanyRegister from "./components/StudentPage/StudentComponents/CompanyRegister";
+import StudentMain from "./components/StudentPage/StudentMain";
+import StudentHome from "./components/StudentPage/StudentHome";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -26,22 +30,26 @@ function App() {
   }, []);
 
   let routes;
-
   if (isLoggedIn) {
     routes = (
       <React.Fragment>
         <StudentSidebar />
         <StudentProfile />
         <Switch>
-          {/* <Route path="/" exact></Route> */}
-          {/* <Route path="/student/profile" exact>
-            <StudentPage />
-          </Route> */}
-          {/* <Route path="/student/cregister/" exact>
+          <Route path="/" exact>
+            <StudentHome />
+          </Route>
+          <Route path="/student/profile" exact>
+            <StudentMain />
+          </Route>
+          <Route path="/student/cregister/" exact>
             <CompanyRegister />
-          </Route> */}
+          </Route>
+          <Route path="/company/:id/" exact>
+            <ViewCompany />
+          </Route>
         </Switch>
-        <Redirect to="/student/profile" />
+        <Redirect to="/" />
       </React.Fragment>
     );
   } else {

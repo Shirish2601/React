@@ -1,8 +1,9 @@
 import React from "react";
 import "./CompanyRegister.css";
+import { Link } from "react-router-dom";
 const CompanyRegister = () => {
   return (
-    <div className="company-registration">
+    <div className="company-registration marginleft">
       <h3>Company Registration</h3>
       <div className="card">
         <img
@@ -14,7 +15,7 @@ const CompanyRegister = () => {
             <h2>Google India</h2>
             <span>
               <i
-                class="fa-regular fa-calendar"
+                className="fa-regular fa-calendar"
                 style={{ color: "#364fc7" }}
               ></i>{" "}
               &nbsp; 12 Dec 2023
@@ -28,7 +29,9 @@ const CompanyRegister = () => {
             aliqua.
           </p>
           <div>
-            <button className="btn-apply">Apply Now</button>
+            <Link to="/company/1/">
+              <button className="btn-apply">Apply Now</button>
+            </Link>
           </div>
         </div>
       </div>
@@ -42,7 +45,7 @@ const CompanyRegister = () => {
             <h2>Infosys India</h2>
             <span>
               <i
-                class="fa-regular fa-calendar"
+                className="fa-regular fa-calendar"
                 style={{ color: "#364fc7" }}
               ></i>{" "}
               &nbsp; 23 Dec 2023
@@ -63,5 +66,4 @@ const CompanyRegister = () => {
     </div>
   );
 };
-
 export default CompanyRegister;

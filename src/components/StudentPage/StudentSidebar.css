@@ -27,7 +27,7 @@ body.dark {
 }
 
 .sidebar {
-  /* position: absolute; */
+  position: absolute;
   top: 60px;
   left: 0;
   height: 100%;

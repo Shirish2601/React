@@ -37,113 +37,98 @@ const StudentSidebar = () => {
   };
 
   return (
-    <main className="studentsidebar-container">
-      <aside className={`sidebar ${!toggle ? "close" : ""}`}>
-        <header>
-          <div className="image-text">
-            <span className="image"> </span>
-          </div>
-          <i
-            className="fa fa-bars toggle"
-            aria-hidden="true"
-            onClick={toggleButtonHandler}
-          ></i>
-        </header>
-        <div className="menu-bar">
-          <div className="menu">
-            <ul className="menu-links">
-              <li className="nav-link">
-                <Link
-                  to="/"
-                  style={{ textDecoration: "none" }}
-                  onClick={activeHandler.bind(this, 1)}
-                >
-                  <i className="fa-solid fa-house icon"></i>
-                  <span className="text nav-text">Home</span>
-                </Link>
-              </li>
+    <aside className={`sidebar ${!toggle ? "close" : ""}`}>
+      <header>
+        <div className="image-text">
+          <span className="image"> </span>
+        </div>
+        <i
+          className="fa fa-bars toggle"
+          aria-hidden="true"
+          onClick={toggleButtonHandler}
+        ></i>
+      </header>
+      <div className="menu-bar">
+        <div className="menu">
+          <ul className="menu-links">
+            <li className="nav-link">
+              <Link
+                to="/"
+                style={{ textDecoration: "none" }}
+                onClick={activeHandler.bind(this, 1)}
+              >
+                <i className="fa-solid fa-house icon"></i>
+                <span className="text nav-text">Home</span>
+              </Link>
+            </li>
 
-              <li className="nav-link">
-                <Link
-                  to="/student/profile/"
-                  style={{ textDecoration: "none" }}
-                  onClick={activeHandler.bind(this, 2)}
-                >
-                  <i className="fa-solid fa-user icon"></i>
-                  <span className="text nav-text">Profile</span>
-                </Link>
-              </li>
-              <li className="nav-link">
-                <Link
-                  to="/student/cregister/"
-                  style={{ textDecoration: "none" }}
-                  onClick={activeHandler.bind(this, 3)}
-                >
-                  <i className="fa-solid fa-check-to-slot icon"></i>
-                  <span className="text nav-text">Company Registration</span>
-                </Link>
-              </li>
+            <li className="nav-link">
+              <Link
+                to="/student/profile/"
+                style={{ textDecoration: "none" }}
+                onClick={activeHandler.bind(this, 2)}
+              >
+                <i className="fa-solid fa-user icon"></i>
+                <span className="text nav-text">Profile</span>
+              </Link>
+            </li>
+            <li className="nav-link">
+              <Link
+                to="/student/cregister/"
+                style={{ textDecoration: "none" }}
+                onClick={activeHandler.bind(this, 3)}
+              >
+                <i className="fa-solid fa-check-to-slot icon"></i>
+                <span className="text nav-text">Company Registration</span>
+              </Link>
+            </li>
 
-              <li className="nav-link">
-                <Link
-                  to="/student/experience/"
-                  style={{ textDecoration: "none" }}
-                >
-                  <i className="fa-solid fa-pen-nib icon"></i>
-                  <span className="text nav-text">Interview Experiences</span>
-                </Link>
-              </li>
+            <li className="nav-link">
+              <Link
+                to="/student/experience/"
+                style={{ textDecoration: "none" }}
+              >
+                <i className="fa-solid fa-pen-nib icon"></i>
+                <span className="text nav-text">Interview Experiences</span>
+              </Link>
+            </li>
 
-              <li className="nav-link">
-                <Link
-                  to="/student/annoucements/"
-                  style={{ textDecoration: "none" }}
-                >
-                  <i className="fa-solid fa-bullhorn icon"></i>
-                  <span className="text nav-text">Annoucements</span>
-                </Link>
-              </li>
+            <li className="nav-link">
+              <Link
+                to="/student/annoucements/"
+                style={{ textDecoration: "none" }}
+              >
+                <i className="fa-solid fa-bullhorn icon"></i>
+                <span className="text nav-text">Annoucements</span>
+              </Link>
+            </li>
 
-              <li className="nav-link">
-                <a href="#">
-                  <i className="fa-solid fa-bell icon"></i>
-                  <span className="text nav-text">Notifications</span>
-                </a>
-              </li>
-
-              <li className="nav-link">
-                <a href="#">
-                  <i className="fa-solid fa-calendar icon"></i>
-                  <span className="text nav-text">Calendar</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="bottom-content">
-            <li className="" onClick={logOutHandler}>
+            <li className="nav-link">
               <a href="#">
-                <i className="fa-solid fa-arrow-right-from-bracket icon"></i>
-                <span className="text nav-text">Logout</span>
+                <i className="fa-solid fa-bell icon"></i>
+                <span className="text nav-text">Notifications</span>
               </a>
             </li>
-          </div>
+
+            <li className="nav-link">
+              <a href="#">
+                <i className="fa-solid fa-calendar icon"></i>
+                <span className="text nav-text">Calendar</span>
+              </a>
+            </li>
+          </ul>
         </div>
-      </aside>
-      <div className="student-render">
-        {active.map((item) => {
-          if (item.active) {
-            if (item.id === 1) {
-              return <StudentHome />;
-            } else if (item.id === 2) {
-              return <StudentMain />;
-            } else if (item.id === 3) {
-              return <CompanyRegister />;
-            }
-          }
-        })}
+
+        <div className="bottom-content">
+          <li className="" onClick={logOutHandler}>
+            <a href="#">
+              <i className="fa-solid fa-arrow-right-from-bracket icon"></i>
+              <span className="text nav-text">Logout</span>
+            </a>
+          </li>
+        </div>
       </div>
-    </main>
+    </aside>
   );
 };
 
