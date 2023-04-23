@@ -5,7 +5,7 @@ const StudentMain = () => {
   // right side student resume
   // edit profile option
   return (
-    <main className="studentmain-container">
+    <div className="studentmain-container">
       <div>
         <h3>Student Profile</h3>
         <div className="studentmain-profile">
@@ -93,7 +93,7 @@ const StudentMain = () => {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 

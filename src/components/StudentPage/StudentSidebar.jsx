@@ -2,6 +2,10 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/auth-context";
 import "./StudentSidebar.css";
 import { Link } from "react-router-dom";
+import StudentHome from "./StudentHome";
+import StudentProfile from "./StudentProfile";
+import StudentMain from "./StudentMain";
+import CompanyRegister from "./StudentComponents/CompanyRegister";
 const StudentSidebar = () => {
   const ctx = useContext(AuthContext);
   const logOutHandler = () => {
@@ -12,33 +16,63 @@ const StudentSidebar = () => {
   const toggleButtonHandler = () => {
     setToggle(!toggle);
   };
+
+  // set link to active and display that content
+
+  // know which aside link has been clicked and also it contains icons so don't use names
+  const [active, setActive] = useState([
+    { id: 1, name: "Home", active: true },
+    { id: 2, name: "Profile", active: false },
+    { id: 3, name: "Company Registration", active: false },
+    { id: 4, name: "Interview Experiences", active: false },
+    { id: 5, name: "Annoucements", active: false },
+    { id: 6, name: "Notifications", active: false },
+  ]);
+
+  const activeHandler = (id) => {
+    const newActive = active.map((item) => {
+      if (item.id === id) {
+        return { ...item, active: true };
+      } else {
+        return { ...item, active: false };
+      }
+    });
+    setActive(newActive);
+  };
+
   return (
-    <>
-      <nav className={`sidebar ${!toggle ? "close" : ""}`}>
+    <main className="studentsidebar-container">
+      <aside className={`sidebar ${!toggle ? "close" : ""}`}>
         <header>
           <div className="image-text">
             <span className="image"> </span>
           </div>
-
           <i
             className="fa fa-bars toggle"
             aria-hidden="true"
             onClick={toggleButtonHandler}
           ></i>
         </header>
-
         <div className="menu-bar">
           <div className="menu">
             <ul className="menu-links">
               <li className="nav-link">
-                <a href="#">
+                <Link
+                  to="/"
+                  style={{ textDecoration: "none" }}
+                  onClick={activeHandler.bind(this, 1)}
+                >
                   <i className="fa-solid fa-house icon"></i>
                   <span className="text nav-text">Home</span>
-                </a>
+                </Link>
               </li>
 
               <li className="nav-link">
-                <Link to="/student/profile/" style={{ textDecoration: "none" }}>
+                <Link
+                  to="/student/profile/"
+                  style={{ textDecoration: "none" }}
+                  onClick={activeHandler.bind(this, 2)}
+                >
                   <i className="fa-solid fa-user icon"></i>
                   <span className="text nav-text">Profile</span>
                 </Link>
@@ -47,6 +81,7 @@ const StudentSidebar = () => {
                 <Link
                   to="/student/cregister/"
                   style={{ textDecoration: "none" }}
+                  onClick={activeHandler.bind(this, 3)}
                 >
                   <i className="fa-solid fa-check-to-slot icon"></i>
                   <span className="text nav-text">Company Registration</span>
@@ -98,8 +133,21 @@ const StudentSidebar = () => {
             </li>
           </div>
         </div>
-      </nav>
-    </>
+      </aside>
+      <div className="student-render">
+        {active.map((item) => {
+          if (item.active) {
+            if (item.id === 1) {
+              return <StudentHome />;
+            } else if (item.id === 2) {
+              return <StudentMain />;
+            } else if (item.id === 3) {
+              return <CompanyRegister />;
+            }
+          }
+        })}
+      </div>
+    </main>
   );
 };
 

@@ -21,8 +21,13 @@ body.dark {
   --text-color: #ccc;
 }
 
+.studentsidebar-container {
+  display: flex;
+  gap: 50px;
+}
+
 .sidebar {
-  position: absolute;
+  /* position: absolute; */
   top: 60px;
   left: 0;
   height: 100%;

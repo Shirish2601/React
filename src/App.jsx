@@ -15,6 +15,8 @@ import { AuthContext } from "./components/context/auth-context";
 import React, { useCallback, useState } from "react";
 import StudentSidebar from "./components/StudentPage/StudentSidebar";
 import CompanyRegister from "./components/StudentPage/StudentComponents/CompanyRegister";
+import StudentHome from "./components/StudentPage/StudentHome";
+import StudentProfile from "./components/StudentPage/StudentProfile";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -25,18 +27,22 @@ function App() {
   const logout = useCallback(() => {
     setIsLoggedIn(false);
   }, []);
+
   let routes;
+
   if (isLoggedIn) {
     routes = (
       <React.Fragment>
         <StudentSidebar />
+        <StudentProfile />
         <Switch>
-          <Route path="/student/profile" exact>
+          {/* <Route path="/" exact></Route> */}
+          {/* <Route path="/student/profile" exact>
             <StudentPage />
-          </Route>
-          <Route path="/student/cregister/" exact>
+          </Route> */}
+          {/* <Route path="/student/cregister/" exact>
             <CompanyRegister />
-          </Route>
+          </Route> */}
         </Switch>
         <Redirect to="/student/profile" />
       </React.Fragment>
