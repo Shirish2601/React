@@ -10,12 +10,9 @@ import {
   Switch,
 } from "react-router-dom";
 import RegisterPage from "./pages/RegisterPage";
-import StudentPage from "./pages/StudentPage";
 import { AuthContext } from "./components/context/auth-context";
 import React, { useCallback, useState } from "react";
 import StudentSidebar from "./components/StudentPage/StudentSidebar";
-import CompanyRegister from "./components/StudentPage/StudentComponents/CompanyRegister";
-import StudentHome from "./components/StudentPage/StudentHome";
 import StudentProfile from "./components/StudentPage/StudentProfile";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

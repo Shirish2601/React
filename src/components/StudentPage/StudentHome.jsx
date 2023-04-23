@@ -14,7 +14,7 @@ const StudentHome = () => {
             <h2>Google India</h2>
             <span>
               <i
-                class="fa-regular fa-calendar"
+                className="fa-regular fa-calendar"
                 style={{ color: "#364fc7" }}
               ></i>{" "}
               &nbsp; 12 Dec 2023
@@ -42,7 +42,7 @@ const StudentHome = () => {
             <h2>TCS India</h2>
             <span>
               <i
-                class="fa-regular fa-calendar"
+                className="fa-regular fa-calendar"
                 style={{ color: "#364fc7" }}
               ></i>{" "}
               &nbsp; 12 Dec 2023
@@ -69,7 +69,7 @@ const StudentHome = () => {
             <h2>Infosys India</h2>
             <span>
               <i
-                class="fa-regular fa-calendar"
+                className="fa-regular fa-calendar"
                 style={{ color: "#364fc7" }}
               ></i>{" "}
               &nbsp; 12 Dec 2023
@@ -97,7 +97,7 @@ const StudentHome = () => {
             <h2>Infosys India</h2>
             <span>
               <i
-                class="fa-regular fa-calendar"
+                className="fa-regular fa-calendar"
                 style={{ color: "#364fc7" }}
               ></i>{" "}
               &nbsp; 12 Dec 2023
