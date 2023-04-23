@@ -13,7 +13,7 @@ const StudentProfile = () => {
   return (
     <div className="action">
       <div className="profile" onClick={setStatusHandler}>
-        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80" />
       </div>
       <div className={`menu ${status ? "active" : ""}`}>
         <h3>

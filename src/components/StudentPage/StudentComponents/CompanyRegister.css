@@ -9,6 +9,9 @@
   margin: 20px auto;
   position: relative;
 }
+.company-registration h3 {
+  padding: 16px 0px;
+}
 
 .card img {
   width: 100%;
@@ -16,9 +19,10 @@
   margin-right: 20px;
 }
 
-.card h2 {
+.job-title {
   font-size: 24px;
   margin: 0 0 10px;
+  font-weight: 600;
 }
 
 .card p {
@@ -27,8 +31,8 @@
   margin: 0 0 20px;
 }
 
-.card button {
-  background-color: #4caf50;
+.card .btn-apply {
+  background-color: #364fc7;
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -36,19 +40,26 @@
   font-size: 16px;
   cursor: pointer;
   margin-left: auto;
+  height: 55px;
 }
-.card button:hover {
-  background-color: #3e8e41;
+.card .btn-apply:hover {
+  background-color: #4c6ef5;
 }
 .card .btn-apply {
   position: absolute;
   bottom: 0;
   right: 0;
   margin: 10px;
-  /* align it vertically */
   top: 50%;
   transform: translateY(-50%);
 }
 .card .job-content {
   width: 60%;
+}
+
+.job-content-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
 }

@@ -3,7 +3,6 @@ import { AuthContext } from "../context/auth-context";
 import "./StudentSidebar.css";
 import { Link } from "react-router-dom";
 import StudentHome from "./StudentHome";
-import StudentProfile from "./StudentProfile";
 import StudentMain from "./StudentMain";
 import CompanyRegister from "./StudentComponents/CompanyRegister";
 const StudentSidebar = () => {
@@ -17,9 +16,6 @@ const StudentSidebar = () => {
     setToggle(!toggle);
   };
 
-  // set link to active and display that content
-
-  // know which aside link has been clicked and also it contains icons so don't use names
   const [active, setActive] = useState([
     { id: 1, name: "Home", active: true },
     { id: 2, name: "Profile", active: false },

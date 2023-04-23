@@ -115,4 +115,5 @@
 /* input field where attribute is readOnly */
 .studentmain-form-content input[readonly] {
   background-color: #f4f4f4;
+  cursor: not-allowed;
 }
