@@ -12,32 +12,34 @@ const Navbar = () => {
       >
         Placement Portal
       </div>
-      <ul className={ctx.isLoggedIn ? "navbar-items hidden" : "navbar-items"}>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li className="login-class">
-          <div className="dropdown">
-            <a className="dropbtn">Login</a>
-            <div className="dropdown-content">
-              <Link to="/login/student">Student</Link>
-              <Link to="/login/admin">Admin</Link>
+      {!ctx.isLoggedIn && (
+        <ul className={ctx.isLoggedIn ? "navbar-items hidden" : "navbar-items"}>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li className="login-class">
+            <div className="dropdown">
+              <a className="dropbtn">Login</a>
+              <div className="dropdown-content">
+                <Link to="/login/student">Student</Link>
+                <Link to="/login/admin">Admin</Link>
+              </div>
             </div>
-          </div>
-        </li>
-        <li className="login-class">
-          <div className="dropdown">
-            <a className="dropbtn">Register</a>
-            <div className="dropdown-content">
-              <Link to="/register/student">Student</Link>
-              <Link to="/register/admin">Admin</Link>
+          </li>
+          <li className="login-class">
+            <div className="dropdown">
+              <a className="dropbtn">Register</a>
+              <div className="dropdown-content">
+                <Link to="/register/student">Student</Link>
+                <Link to="/register/admin">Admin</Link>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>
-          <Link to="/about">About Us</Link>
-        </li>
-      </ul>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+        </ul>
+      )}
     </nav>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/auth-context";
 import "./StudentSidebar.css";
+import { Link } from "react-router-dom";
 const StudentSidebar = () => {
   const ctx = useContext(AuthContext);
   const logOutHandler = () => {
@@ -37,31 +38,39 @@ const StudentSidebar = () => {
               </li>
 
               <li className="nav-link">
-                <a href="#">
+                <Link to="/student/profile/" style={{ textDecoration: "none" }}>
                   <i className="fa-solid fa-user icon"></i>
                   <span className="text nav-text">Profile</span>
-                </a>
+                </Link>
               </li>
-
               <li className="nav-link">
-                <a href="#">
+                <Link
+                  to="/student/cregister/"
+                  style={{ textDecoration: "none" }}
+                >
                   <i className="fa-solid fa-check-to-slot icon"></i>
                   <span className="text nav-text">Company Registration</span>
-                </a>
+                </Link>
               </li>
 
               <li className="nav-link">
-                <a href="#">
+                <Link
+                  to="/student/experience/"
+                  style={{ textDecoration: "none" }}
+                >
                   <i className="fa-solid fa-pen-nib icon"></i>
                   <span className="text nav-text">Interview Experiences</span>
-                </a>
+                </Link>
               </li>
 
               <li className="nav-link">
-                <a href="#">
+                <Link
+                  to="/student/annoucements/"
+                  style={{ textDecoration: "none" }}
+                >
                   <i className="fa-solid fa-bullhorn icon"></i>
                   <span className="text nav-text">Annoucements</span>
-                </a>
+                </Link>
               </li>
 
               <li className="nav-link">
