@@ -117,11 +117,6 @@ const CreateDrive = () => {
                   " " +
                   `${Styles["low-width"]}`
                 }
-                // className={`${
-                //   imgUploadOption === "link" ? "" : Styles["inactive"]
-                // } ${Styles["low-width"]}
-                // ${imgUploadOption === "upload" ? Styles["inactive"] : ""}
-                // `}
               >
                 <label>Enter Image Link</label>
                 <input type="text" placeholder="Enter Image Link" />
@@ -374,7 +369,7 @@ const CreateDrive = () => {
             >
               <label>Number of Rounds:</label>
               <div className={`${Styles["newinput"]}  `}>
-                <input type="text" placeholder="Enter Minimum CGPA" />
+                <input type="text" placeholder="Enter Number of Rounds" />
                 <div className={`${Styles["grey-box"]}`}>
                   <span>Rounds</span>
                 </div>
