@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import Styles from "./CreateDrive.module.css";
 const CreateDrive = () => {
   const [other, setOther] = useState(false);
+  const [imgUploadOption, setImgUploadOption] = useState("");
+
+  const imgUploadHandler = (e) => {
+    console.log(e.target.value);
+    setImgUploadOption(e.target.value);
+  };
 
   const handleOther = (e) => {
     if (e.target.value === "other") {
@@ -71,11 +77,54 @@ const CreateDrive = () => {
                 <textarea
                   className={`${Styles["text-area"]}`}
                   placeholder="Enter About Company"
-                  //   width should be equal to parent div
                   cols={70}
                   rows={3}
                   required
                 ></textarea>
+              </div>
+            </div>
+          </div>
+          <div className={`${Styles["create-drive__form__company-details"]}`}>
+            <div className={`${Styles["form-content"]}`}>
+              <label>Company Logo</label>
+              <select onChange={imgUploadHandler}>
+                <option value="default">Select Company Logo</option>
+                <option value="upload">Upload</option>
+                <option value="link">Link</option>
+              </select>
+            </div>
+            <div
+              className={`${Styles["form-content"]}
+              ${imgUploadOption === "default" ? Styles["inactive"] : ""}`}
+            >
+              <div
+                className={`${
+                  imgUploadOption === "upload" ? "" : Styles["inactive"]
+                }`}
+              >
+                <div
+                  className={
+                    `${Styles["low-width-upload"]}` + ` ${Styles["upload-img"]}`
+                  }
+                >
+                  <label>Upload Company Logo</label>
+                  <input type="file" accept="image/*" />
+                </div>
+              </div>
+              <div
+                className={
+                  `${imgUploadOption === "link" ? "" : Styles["inactive"]}` +
+                  " " +
+                  `${Styles["low-width"]}`
+                }
+                // className={`${
+                //   imgUploadOption === "link" ? "" : Styles["inactive"]
+                // } ${Styles["low-width"]}
+                // ${imgUploadOption === "upload" ? Styles["inactive"] : ""}
+                // `}
+              >
+                <label>Enter Image Link</label>
+                <input type="text" placeholder="Enter Image Link" />
               </div>
             </div>
           </div>

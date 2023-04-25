@@ -94,7 +94,6 @@
   resize: none;
   width: 1250px;
 }
-/* style input where type is checkbox */
 .checkbox-style {
   display: flex;
   gap: 50px;
@@ -126,6 +125,31 @@
 .less-width {
   width: 590px;
 }
+.low-width input {
+  width: 600px;
+}
+.low-width-upload input {
+  width: 200px;
+}
+.upload-img {
+  display: flex;
+  flex-direction: column;
+}
+.upload-img input::file-selector-button {
+  font-weight: bold;
+  background-color: #364fc7;
+  padding: 0.5em;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+}
+.upload-img input::file-selector-button:hover {
+  background-color: #4c6ef5;
+}
 .new-options {
   display: flex;
   flex-direction: row;
@@ -151,7 +175,6 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  /* center it horizonatally of page */
 }
 .btn-create-drive:hover {
   background-color: #4c6ef5;
