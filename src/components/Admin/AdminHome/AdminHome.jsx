@@ -1,6 +1,6 @@
 import React from "react";
 import Styles from "./AdminHome.module.css";
-import Card from "../../shared/Card";
+import Card from "../../../shared/Card";
 const AdminHome = () => {
   return (
     <div className={`marginleft ${Styles["admin-home"]}`}>

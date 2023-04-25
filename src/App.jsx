@@ -19,7 +19,8 @@ import CompanyRegister from "./components/StudentPage/StudentComponents/CompanyR
 import StudentMain from "./components/StudentPage/StudentMain";
 import StudentHome from "./components/StudentPage/StudentHome";
 import Announcement from "./components/Announcement/Announcement";
-import AdminHome from "./components/Admin/AdminHome";
+import AdminHome from "./components/Admin/AdminHome/AdminHome";
+import CreateDrive from "./components/Admin/CreateDrive/CreateDrive";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userType, setUserType] = useState("");
@@ -35,7 +36,6 @@ function App() {
   const userTypeHandler = useCallback((type) => {
     setUserType(type);
   }, []);
-
   let adminRoutes;
   let userRoutes;
   let routes;
@@ -46,6 +46,9 @@ function App() {
         <Switch>
           <Route path="/" exact>
             <AdminHome />
+          </Route>
+          <Route path="/admin/create/" exact>
+            <CreateDrive />
           </Route>
         </Switch>
         <Redirect to="/" exact />

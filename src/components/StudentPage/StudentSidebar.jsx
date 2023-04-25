@@ -120,7 +120,7 @@ const StudentSidebar = (props) => {
                     style={{ textDecoration: "none" }}
                     onClick={activeHandler.bind(this, 2)}
                   >
-                    <i class="fa-solid fa-plus icon"></i>
+                    <i className="fa-solid fa-plus icon"></i>
                     <span className="text nav-text">Create Drive</span>
                   </Link>
                 </li>
