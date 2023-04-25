@@ -85,16 +85,6 @@ const StudentSidebar = () => {
 
             <li className="nav-link">
               <Link
-                to="/student/experience/"
-                style={{ textDecoration: "none" }}
-              >
-                <i className="fa-solid fa-pen-nib icon"></i>
-                <span className="text nav-text">Interview Experiences</span>
-              </Link>
-            </li>
-
-            <li className="nav-link">
-              <Link
                 to="/student/annoucements/"
                 style={{ textDecoration: "none" }}
               >
@@ -104,17 +94,10 @@ const StudentSidebar = () => {
             </li>
 
             <li className="nav-link">
-              <a href="#">
-                <i className="fa-solid fa-bell icon"></i>
-                <span className="text nav-text">Notifications</span>
-              </a>
-            </li>
-
-            <li className="nav-link">
-              <a href="#">
+              <Link to="/student/calendar/" style={{ textDecoration: "none" }}>
                 <i className="fa-solid fa-calendar icon"></i>
                 <span className="text nav-text">Calendar</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

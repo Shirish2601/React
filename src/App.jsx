@@ -18,6 +18,7 @@ import ViewCompany from "./components/Company/ViewCompany";
 import CompanyRegister from "./components/StudentPage/StudentComponents/CompanyRegister";
 import StudentMain from "./components/StudentPage/StudentMain";
 import StudentHome from "./components/StudentPage/StudentHome";
+import Announcement from "./components/Announcement/Announcement";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -28,7 +29,6 @@ function App() {
   const logout = useCallback(() => {
     setIsLoggedIn(false);
   }, []);
-
   let routes;
   if (isLoggedIn) {
     routes = (
@@ -47,6 +47,9 @@ function App() {
           </Route>
           <Route path="/company/:id/" exact>
             <ViewCompany />
+          </Route>
+          <Route path="/student/annoucements/" exact>
+            <Announcement />
           </Route>
         </Switch>
         <Redirect to="/" />

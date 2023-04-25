@@ -1,0 +1,61 @@
+.view-company {
+  padding: 16px 0px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  margin-top: 16px;
+  padding: 20px 28px;
+  position: relative;
+}
+.company-title {
+  font-size: 24px;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+.company-info {
+  display: flex;
+  align-items: center;
+}
+.company-info img {
+  max-width: 200px;
+  max-height: 200px;
+  margin-right: 20px;
+}
+.company-description h3 {
+  margin-top: 24px;
+}
+.company-description p {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.shift-to-right {
+  margin-left: 30px;
+}
+.shift-to-right h4 {
+  margin-bottom: 4px;
+}
+.shift-to-right ul li {
+  margin-left: 24px;
+}
+.btn-apply {
+  background-color: #364fc7;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: auto;
+  height: 55px;
+}
+.btn-apply:hover {
+  background-color: #4c6ef5;
+}
+.btn-apply {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 18px;
+}

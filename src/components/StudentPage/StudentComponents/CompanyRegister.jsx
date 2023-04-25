@@ -22,7 +22,7 @@ const CompanyRegister = () => {
             </span>
             <span>Salary: 10 Lakhs</span>
           </div>
-          <h2 className="job-title">Job Title</h2>
+          <h3 className="job-title">Job Title</h3>
           <p>
             Job Description Lorem ipsum dolor sit amet, consectetur adipiscing
             elit, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -52,7 +52,7 @@ const CompanyRegister = () => {
             </span>
             <span>Salary: 12 Lakhs</span>
           </div>
-          <h2 className="job-title">Job Title</h2>
+          <h3 className="job-title">Job Title</h3>
           <p>
             Job Description Lorem ipsum dolor sit amet, consectetur adipiscing
             elit, sed do eiusmod tempor incididunt ut labore et dolore magna
