@@ -42,6 +42,7 @@
   top: 80px;
   visibility: visible;
   opacity: 1;
+  z-index: 1;
 }
 .student-profile__icon {
   min-width: 30px;
