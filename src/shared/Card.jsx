@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../components/context/auth-context";
+
 import Styles from "./Card.module.css";
 const Card = (props) => {
+  const ctx = useContext(AuthContext);
+
   return (
     <div className={`${Styles["card"]}`}>
       <img src={props.img} alt="Company Logo" />
@@ -24,9 +28,21 @@ const Card = (props) => {
           aliqua.
         </p>
         <div>
-          <Link to="/company/1/">
-            <button className={`${Styles["btn-apply"]}`}>Apply Now</button>
-          </Link>
+          {ctx.userType === "student" && (
+            <Link to="/company/1/">
+              <button className={`${Styles["btn-apply"]}`}>Apply Now</button>
+            </Link>
+          )}
+          {ctx.userType === "admin" && (
+            <React.Fragment>
+              <button className={`${Styles["btn-delete"]} btn-apply`}>
+                Delete
+              </button>
+              <button className={`${Styles["btn-view"]} btn-apply`}>
+                Edit
+              </button>
+            </React.Fragment>
+          )}
         </div>
       </div>
     </div>

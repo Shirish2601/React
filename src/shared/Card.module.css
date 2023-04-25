@@ -32,7 +32,7 @@
   margin: 0 0 20px;
 }
 
-.card .btn-apply {
+.card button {
   background-color: #364fc7;
   color: #fff;
   border: none;
@@ -43,7 +43,7 @@
   margin-left: auto;
   height: 55px;
 }
-.card .btn-apply:hover {
+.card button:hover {
   background-color: #4c6ef5;
 }
 .card .btn-apply {
@@ -63,4 +63,23 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 12px;
+}
+
+.card .btn-view {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  transform: translateY(-50%);
+  width: 100px;
+}
+
+.card .btn-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  transform: translateY(40%);
+  margin-bottom: 10px;
+  width: 100px;
 }

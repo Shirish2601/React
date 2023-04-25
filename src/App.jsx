@@ -108,7 +108,7 @@ function App() {
         isLoggedIn: isLoggedIn,
         login: login,
         logout: logout,
-        userType: "",
+        userType: userType,
         userTypeHandler: userTypeHandler,
       }}
     >

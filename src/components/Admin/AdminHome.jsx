@@ -13,6 +13,14 @@ const AdminHome = () => {
         date={"12 Dec 2023"}
         salary={"10 Lakhs"}
       />
+      <Card
+        img={
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/2560px-Tata_Consultancy_Services_Logo.svg.png"
+        }
+        companyName={"Tata Consultancy Services"}
+        date={"13 Dec 2023"}
+        salary={"3 Lakhs"}
+      />
     </div>
   );
 };
