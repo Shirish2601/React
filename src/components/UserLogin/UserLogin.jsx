@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./UserLogin.css";
 import ImagePath from "../../assets/LoginImageArt.svg";
 import { AuthContext } from "../context/auth-context";
+
 const UserLogin = (props) => {
   const ctx = useContext(AuthContext);
 
@@ -13,16 +14,31 @@ const UserLogin = (props) => {
 
   const buttonSubmitHandler = (e) => {
     e.preventDefault();
+
     const userData = {
       email: emailRef.current.value,
       password: passwordRef.current.value,
       authorized: false,
     };
+
     if (
       emailRef.current.value === "abc" &&
-      passwordRef.current.value === "abc"
+      passwordRef.current.value === "abc" &&
+      props.userRole === "student"
     ) {
       ctx.login();
+      ctx.isLoggedIn = true;
+      ctx.userTypeHandler("student");
+      ctx.userType = "student";
+      userData.authorized = true;
+    } else if (
+      emailRef.current.value === "abc1" &&
+      passwordRef.current.value === "abc1" &&
+      props.userRole === "admin"
+    ) {
+      ctx.login();
+      ctx.userTypeHandler("admin");
+      ctx.userType = "admin";
       ctx.isLoggedIn = true;
       userData.authorized = true;
     } else {

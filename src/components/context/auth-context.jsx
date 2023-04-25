@@ -4,4 +4,6 @@ export const AuthContext = React.createContext({
   isLoggedIn: false,
   login: () => {},
   logout: () => {},
+  userTypeHandler: () => {},
+  userType: "",
 });

@@ -19,8 +19,10 @@ import CompanyRegister from "./components/StudentPage/StudentComponents/CompanyR
 import StudentMain from "./components/StudentPage/StudentMain";
 import StudentHome from "./components/StudentPage/StudentHome";
 import Announcement from "./components/Announcement/Announcement";
+import AdminHome from "./components/Admin/AdminHome";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userType, setUserType] = useState("");
 
   const login = useCallback(() => {
     setIsLoggedIn(true);
@@ -29,9 +31,30 @@ function App() {
   const logout = useCallback(() => {
     setIsLoggedIn(false);
   }, []);
+
+  const userTypeHandler = useCallback((type) => {
+    setUserType(type);
+  }, []);
+
+  let adminRoutes;
+  let userRoutes;
   let routes;
-  if (isLoggedIn) {
-    routes = (
+  if (isLoggedIn && userType === "admin") {
+    adminRoutes = (
+      <React.Fragment>
+        <StudentSidebar />
+        <Switch>
+          <Route path="/" exact>
+            <AdminHome />
+          </Route>
+        </Switch>
+        <Redirect to="/" exact />
+      </React.Fragment>
+    );
+  }
+
+  if (isLoggedIn && userType === "student") {
+    userRoutes = (
       <React.Fragment>
         <StudentSidebar />
         <StudentProfile />
@@ -85,11 +108,16 @@ function App() {
         isLoggedIn: isLoggedIn,
         login: login,
         logout: logout,
+        userType: "",
+        userTypeHandler: userTypeHandler,
       }}
     >
       <Router>
         <Navbar />
-        <Switch>{routes}</Switch>
+        <Switch>
+          {isLoggedIn && userType === "admin" ? adminRoutes : routes}
+          {isLoggedIn && userType === "student" ? userRoutes : routes}
+        </Switch>
       </Router>
     </AuthContext.Provider>
   );
