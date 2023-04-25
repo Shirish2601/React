@@ -1,6 +1,6 @@
 import React from "react";
 import "./UserRegister.css";
-import { Link } from "react-router-dom";
+import RegImg from "./../../assets/RegisterImg.svg";
 const UserRegister = () => {
   return (
     <div className="wrapper-register">
@@ -14,20 +14,16 @@ const UserRegister = () => {
           <input type="text" placeholder="Enter Your Mobile No." />
           <input type="password" placeholder="Password" />
           <select name="branch" id="branch">
-            <option value="" disabled selected hidden>
-              {" "}
-              Select Branch
-            </option>
+            <option value="defaultBranch"> Select Branch</option>
             <option value="Computer">Computer Science and Engineering</option>
+            <option value="AI">Computer Science and Engineering(AI)</option>
             <option value="Electrical">Electrical Engineering</option>
             <option value="Mechanical">Mechanical Engineering</option>
             <option value="Civil">Civil Engineering</option>
             <option value="Electronics">Electronics Engineering</option>
           </select>
           <select name="year" id="year">
-            <option value="" disabled selected hidden>
-              Select Year
-            </option>
+            <option value="defaultYear">Select Year</option>
             <option value="FE">First Year</option>
             <option value="SE">Second Year</option>
             <option value="TE">Third Year</option>
@@ -37,11 +33,7 @@ const UserRegister = () => {
         </div>
         <button type="submit">Register</button>
       </form>
-      <img
-        className="wrapper-register__image"
-        src="..\src\assets\RegisterImg.svg"
-        alt="Login Image"
-      />
+      <img className="wrapper-register__image" src={RegImg} alt="Login Image" />
     </div>
   );
 };

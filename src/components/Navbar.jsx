@@ -28,11 +28,9 @@ const Navbar = () => {
           </li>
           <li className="login-class">
             <div className="dropdown">
-              <a className="dropbtn">Register</a>
-              <div className="dropdown-content">
-                <Link to="/register/student">Student</Link>
-                <Link to="/register/admin">Admin</Link>
-              </div>
+              <Link to="/register/student/" className="dropbtn">
+                Register
+              </Link>
             </div>
           </li>
           <li>
