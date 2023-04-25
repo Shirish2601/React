@@ -42,7 +42,7 @@ function App() {
   if (isLoggedIn && userType === "admin") {
     adminRoutes = (
       <React.Fragment>
-        <StudentSidebar />
+        <StudentSidebar userType={"admin"} />
         <Switch>
           <Route path="/" exact>
             <AdminHome />
@@ -56,7 +56,7 @@ function App() {
   if (isLoggedIn && userType === "student") {
     userRoutes = (
       <React.Fragment>
-        <StudentSidebar />
+        <StudentSidebar userType={"student"} />
         <StudentProfile />
         <Switch>
           <Route path="/" exact>

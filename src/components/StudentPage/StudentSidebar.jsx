@@ -2,12 +2,11 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/auth-context";
 import "./StudentSidebar.css";
 import { Link } from "react-router-dom";
-import StudentHome from "./StudentHome";
-import StudentMain from "./StudentMain";
-import CompanyRegister from "./StudentComponents/CompanyRegister";
-const StudentSidebar = () => {
+
+const StudentSidebar = (props) => {
   const ctx = useContext(AuthContext);
   const logOutHandler = () => {
+    console.log(ctx.userType);
     ctx.logout();
   };
   const [toggle, setToggle] = useState(false);
@@ -51,54 +50,82 @@ const StudentSidebar = () => {
       <div className="menu-bar">
         <div className="menu">
           <ul className="menu-links">
-            <li className="nav-link">
-              <Link
-                to="/"
-                style={{ textDecoration: "none" }}
-                onClick={activeHandler.bind(this, 1)}
-              >
-                <i className="fa-solid fa-house icon"></i>
-                <span className="text nav-text">Home</span>
-              </Link>
-            </li>
-
-            <li className="nav-link">
-              <Link
-                to="/student/profile/"
-                style={{ textDecoration: "none" }}
-                onClick={activeHandler.bind(this, 2)}
-              >
-                <i className="fa-solid fa-user icon"></i>
-                <span className="text nav-text">Profile</span>
-              </Link>
-            </li>
-            <li className="nav-link">
-              <Link
-                to="/student/cregister/"
-                style={{ textDecoration: "none" }}
-                onClick={activeHandler.bind(this, 3)}
-              >
-                <i className="fa-solid fa-check-to-slot icon"></i>
-                <span className="text nav-text">Company Registration</span>
-              </Link>
-            </li>
-
-            <li className="nav-link">
-              <Link
-                to="/student/annoucements/"
-                style={{ textDecoration: "none" }}
-              >
-                <i className="fa-solid fa-bullhorn icon"></i>
-                <span className="text nav-text">Annoucements</span>
-              </Link>
-            </li>
-
-            <li className="nav-link">
-              <Link to="/student/calendar/" style={{ textDecoration: "none" }}>
-                <i className="fa-solid fa-calendar icon"></i>
-                <span className="text nav-text">Calendar</span>
-              </Link>
-            </li>
+            {props.userType === "student" && (
+              <React.Fragment>
+                <li className="nav-link">
+                  <Link
+                    to="/"
+                    style={{ textDecoration: "none" }}
+                    onClick={activeHandler.bind(this, 1)}
+                  >
+                    <i className="fa-solid fa-house icon"></i>
+                    <span className="text nav-text">Home</span>
+                  </Link>
+                </li>
+                <li className="nav-link">
+                  <Link
+                    to="/student/profile/"
+                    style={{ textDecoration: "none" }}
+                    onClick={activeHandler.bind(this, 2)}
+                  >
+                    <i className="fa-solid fa-user icon"></i>
+                    <span className="text nav-text">Profile</span>
+                  </Link>
+                </li>
+                <li className="nav-link">
+                  <Link
+                    to="/student/cregister/"
+                    style={{ textDecoration: "none" }}
+                    onClick={activeHandler.bind(this, 3)}
+                  >
+                    <i className="fa-solid fa-check-to-slot icon"></i>
+                    <span className="text nav-text">Company Registration</span>
+                  </Link>
+                </li>
+                <li className="nav-link">
+                  <Link
+                    to="/student/annoucements/"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <i className="fa-solid fa-bullhorn icon"></i>
+                    <span className="text nav-text">Annoucements</span>
+                  </Link>
+                </li>
+                <li className="nav-link">
+                  <Link
+                    to="/student/calendar/"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <i className="fa-solid fa-calendar icon"></i>
+                    <span className="text nav-text">Calendar</span>
+                  </Link>
+                </li>
+              </React.Fragment>
+            )}{" "}
+            {props.userType === "admin" && (
+              <React.Fragment>
+                <li className="nav-link">
+                  <Link
+                    to="/"
+                    style={{ textDecoration: "none" }}
+                    onClick={activeHandler.bind(this, 1)}
+                  >
+                    <i className="fa-solid fa-house icon"></i>
+                    <span className="text nav-text">Home</span>
+                  </Link>
+                </li>
+                <li className="nav-link">
+                  <Link
+                    to="/student/profile/"
+                    style={{ textDecoration: "none" }}
+                    onClick={activeHandler.bind(this, 2)}
+                  >
+                    <i className="fa-solid fa-user icon"></i>
+                    <span className="text nav-text">Profile</span>
+                  </Link>
+                </li>
+              </React.Fragment>
+            )}
           </ul>
         </div>
 
