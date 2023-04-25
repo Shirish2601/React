@@ -21,6 +21,7 @@ import StudentHome from "./components/StudentPage/StudentHome";
 import Announcement from "./components/Announcement/Announcement";
 import AdminHome from "./components/Admin/AdminHome/AdminHome";
 import CreateDrive from "./components/Admin/CreateDrive/CreateDrive";
+import AppliedStudents from "./components/Admin/AppliedStudents/AppliedStudents";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userType, setUserType] = useState("");
@@ -36,9 +37,11 @@ function App() {
   const userTypeHandler = useCallback((type) => {
     setUserType(type);
   }, []);
+
   let adminRoutes;
   let userRoutes;
   let routes;
+
   if (isLoggedIn && userType === "admin") {
     adminRoutes = (
       <React.Fragment>
@@ -49,6 +52,12 @@ function App() {
           </Route>
           <Route path="/admin/create/" exact>
             <CreateDrive />
+          </Route>
+          <Route path="/company/:id/" exact>
+            <ViewCompany />
+          </Route>
+          <Route path="/company/:id/applied/" exact>
+            <AppliedStudents />
           </Route>
         </Switch>
         <Redirect to="/" exact />

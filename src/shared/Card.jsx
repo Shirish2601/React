@@ -11,7 +11,12 @@ const Card = (props) => {
       <img src={props.img} alt="Company Logo" />
       <div className={`${Styles["job-content"]}`}>
         <div className={`${Styles["job-content-info"]}`}>
-          <h2>{props.companyName}</h2>
+          {ctx.userType === "admin" && (
+            <Link to="/company/1/" className={`${Styles["hover-effect"]}`}>
+              <h2>{props.companyName}</h2>
+            </Link>
+          )}
+          {ctx.userType === "student" && <h2>{props.companyName}</h2>}
           <span>
             <i
               className="fa-regular fa-calendar"

@@ -83,3 +83,13 @@
   margin-bottom: 10px;
   width: 100px;
 }
+.hover-effect {
+  text-decoration: none;
+  color: black;
+}
+.hover-effect:hover {
+  text-decoration: underline;
+  color: #364fc7;
+  transition: 0.2s;
+  transform: translateY(2px);
+}

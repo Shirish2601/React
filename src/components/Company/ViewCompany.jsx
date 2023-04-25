@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { AuthContext } from "../context/auth-context";
+
 import Styles from "./ViewCompany.module.css";
+import { Link } from "react-router-dom";
+
 const ViewCompany = () => {
+  const ctx = useContext(AuthContext);
   return (
     <div className={`marginleft ${Styles["view-company"]}`}>
       <div className={`${Styles["company-info"]}`}>
@@ -12,7 +18,16 @@ const ViewCompany = () => {
         <h3 className={`${Styles["company-title"]}`}>
           Tata Consultancy Services
         </h3>
-        <button className={`${Styles["btn-apply"]}`}>Apply Now</button>
+        {ctx.userType === "student" && (
+          <button className={`${Styles["btn-apply"]}`}>Apply Now</button>
+        )}
+        {ctx.userType === "admin" && (
+          <Link to="/company/1/applied">
+            <button className={`${Styles["btn-apply"]}`}>
+              View Applied Students
+            </button>
+          </Link>
+        )}
       </div>
       <hr />
       <section className={`${Styles["company-description"]}`}>
