@@ -6,4 +6,5 @@ export const AuthContext = React.createContext({
   logout: () => {},
   userTypeHandler: () => {},
   userType: "",
+  user: null,
 });

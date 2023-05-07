@@ -2,11 +2,11 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/auth-context";
 import "./StudentSidebar.css";
 import { Link } from "react-router-dom";
+import { Alert } from "@mui/material";
 
 const StudentSidebar = (props) => {
   const ctx = useContext(AuthContext);
   const logOutHandler = () => {
-    console.log(ctx.userType);
     ctx.logout();
   };
   const [toggle, setToggle] = useState(false);
@@ -54,7 +54,7 @@ const StudentSidebar = (props) => {
               <React.Fragment>
                 <li className="nav-link">
                   <Link
-                    to="/"
+                    to="/student"
                     style={{ textDecoration: "none" }}
                     onClick={activeHandler.bind(this, 1)}
                   >

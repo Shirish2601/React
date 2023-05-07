@@ -302,11 +302,36 @@ const CreateDrive = () => {
           </div>
         </div>
       </form>
+      {/* package form */}
       <form action="" className={`${Styles["create-drive__form"]}`}>
         <div>
           <h3>Package Details</h3>
           <p>Enter Package Details</p>
         </div>
+        <div className={`${Styles["form-container"]} `}>
+          <div className={`${Styles["create-drive__form__company-details"]}`}>
+            <div className={`${Styles["form-content"]}`}>
+              <label>Package Offered</label>
+              <div className={`${Styles["newinput"]} ${Styles["less-width"]}`}>
+                <input type="text" placeholder="Enter Package Offered" />
+                <div className={`${Styles["grey-box"]}`}>
+                  <span>LPA</span>
+                </div>
+              </div>
+            </div>
+            <div className={`${Styles["form-content"]}`}>
+              <label>Allow Placed Students?</label>
+              <select>
+                <option value="">Select Allow Placed Students?</option>
+                <option value="No">No</option>
+                <option value="Higher Package">Only for Higher Package</option>
+                <option value="Allow all">Allow All</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        {/*
         <div className={`${Styles["form-container"]} `}>
           <div className={`${Styles["create-drive__form__company-details"]}`}>
             <div className={`${Styles["form-content"]}`}>
@@ -319,7 +344,7 @@ const CreateDrive = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </form>
       <form action="" className={`${Styles["create-drive__form"]}`}>
         <div>

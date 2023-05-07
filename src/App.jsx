@@ -22,16 +22,20 @@ import Announcement from "./components/Announcement/Announcement";
 import AdminHome from "./components/Admin/AdminHome/AdminHome";
 import CreateDrive from "./components/Admin/CreateDrive/CreateDrive";
 import AppliedStudents from "./components/Admin/AppliedStudents/AppliedStudents";
+import StudentSettings from "./components/StudentPage/StudentSettings";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userType, setUserType] = useState("");
+  const [user, setUser] = useState(null);
 
-  const login = useCallback(() => {
+  const login = useCallback((userObject) => {
     setIsLoggedIn(true);
+    setUser(userObject);
   }, []);
 
   const logout = useCallback(() => {
     setIsLoggedIn(false);
+    setUser(null);
   }, []);
 
   const userTypeHandler = useCallback((type) => {
@@ -64,14 +68,13 @@ function App() {
       </React.Fragment>
     );
   }
-
   if (isLoggedIn && userType === "student") {
     userRoutes = (
       <React.Fragment>
         <StudentSidebar userType={"student"} />
         <StudentProfile />
         <Switch>
-          <Route path="/" exact>
+          <Route path="/student" exact>
             <StudentHome />
           </Route>
           <Route path="/student/profile" exact>
@@ -83,11 +86,14 @@ function App() {
           <Route path="/company/:id/" exact>
             <ViewCompany />
           </Route>
+          <Route path="/student/settings/" exact>
+            <StudentSettings />
+          </Route>
           <Route path="/student/annoucements/" exact>
             <Announcement />
           </Route>
         </Switch>
-        <Redirect to="/" />
+        <Redirect to="/student" />
       </React.Fragment>
     );
   } else {
@@ -122,6 +128,7 @@ function App() {
         logout: logout,
         userType: userType,
         userTypeHandler: userTypeHandler,
+        user: user,
       }}
     >
       <Router>
