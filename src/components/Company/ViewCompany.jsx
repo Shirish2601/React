@@ -1,11 +1,33 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { AuthContext } from "../context/auth-context";
-
 import Styles from "./ViewCompany.module.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const ViewCompany = () => {
+const ViewCompany = (props) => {
+  const cid = useParams();
+
+  const getCompanyDetails = async () => {
+    try {
+      console.log(cid);
+      const response = await fetch(
+        `http://localhost:5500/api/admin/company/${cid.id}`
+      );
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message);
+      } else {
+        const data = await response.json();
+        console.log(data);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    getCompanyDetails();
+  }, []);
+
   const ctx = useContext(AuthContext);
   return (
     <div className={`marginleft ${Styles["view-company"]}`}>
@@ -16,13 +38,13 @@ const ViewCompany = () => {
           className={`${Styles["company-logo"]}`}
         />
         <h3 className={`${Styles["company-title"]}`}>
-          Tata Consultancy Services
+          {/* Tata Consultancy Services */}
         </h3>
         {ctx.userType === "student" && (
           <button className={`${Styles["btn-apply"]}`}>Apply Now</button>
         )}
         {ctx.userType === "admin" && (
-          <Link to="/company/1/applied">
+          <Link to="/admin/company/1/applied">
             <button className={`${Styles["btn-apply"]}`}>
               View Applied Students
             </button>
@@ -33,14 +55,14 @@ const ViewCompany = () => {
       <section className={`${Styles["company-description"]}`}>
         <h3>About Company</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas autem
+          {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas autem
           iusto esse magni voluptatem veritatis saepe, harum dolor labore rerum,
           tempore quisquam officiis mollitia, odio nulla numquam ipsum provident
           et! Atque fuga nemo repudiandae commodi harum non deleniti et, amet ab
           laboriosam corporis illo saepe nam doloremque recusandae animi minus
           voluptate optio eveniet perspiciatis qui dicta soluta. Rem, ipsum
           molestias! Similique suscipit laborum praesentium, inventore debitis a
-          distinctio dolor ipsa. Quia, nisi!
+          distinctio dolor ipsa. Quia, nisi! */}
         </p>
         <h3> Job Description</h3>
         <div className={`${Styles["shift-to-right"]}`}>

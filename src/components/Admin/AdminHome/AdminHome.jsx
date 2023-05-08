@@ -55,6 +55,7 @@ const AdminHome = () => {
                   date={drive.registrationdetails.registrationstartdate}
                   salary={drive.packagedetails.packageoffered + " Lakhs"}
                   id={drive._id}
+                  aboutcompany={drive.companydetails.aboutcompany}
                 />
               </React.Fragment>
             );

@@ -51,20 +51,20 @@ function App() {
       <React.Fragment>
         <StudentSidebar userType={"admin"} />
         <Switch>
-          <Route path="/" exact>
+          <Route path="/admin" exact>
             <AdminHome />
           </Route>
           <Route path="/admin/create/" exact>
             <CreateDrive />
           </Route>
-          <Route path="/company/:id/" exact>
+          <Route path="/admin/company/:id/" exact>
             <ViewCompany />
           </Route>
-          <Route path="/company/:id/applied/" exact>
+          <Route path="/admin/company/:id/applied/" exact>
             <AppliedStudents />
           </Route>
         </Switch>
-        <Redirect to="/" exact />
+        <Redirect to="/admin" exact />
       </React.Fragment>
     );
   }

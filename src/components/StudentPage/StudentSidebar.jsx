@@ -106,7 +106,7 @@ const StudentSidebar = (props) => {
               <React.Fragment>
                 <li className="nav-link">
                   <Link
-                    to="/"
+                    to="/admin/"
                     style={{ textDecoration: "none" }}
                     onClick={activeHandler.bind(this, 1)}
                   >

@@ -13,7 +13,7 @@ const Card = (props) => {
         <div className={`${Styles["job-content-info"]}`}>
           {ctx.userType === "admin" && (
             <Link
-              to={`/company/${props.id}`}
+              to={`/admin/company/${props.id}`}
               className={`${Styles["hover-effect"]}`}
             >
               <h2>{props.companyName}</h2>
@@ -30,11 +30,7 @@ const Card = (props) => {
           <span>Salary: {props.salary}</span>
         </div>
         <h3 className={`${Styles["job-title"]}`}>Job Title</h3>
-        <p>
-          Job Description Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua.
-        </p>
+        <p>{props.aboutcompany}</p>
         <div>
           {ctx.userType === "student" && (
             <Link to="/company/1/">
