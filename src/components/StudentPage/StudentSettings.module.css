@@ -15,7 +15,11 @@
   display: flex;
   flex-direction: column;
 }
-
+.form-content-button {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
 .form-content label {
   font-weight: 600;
   font-size: 14px;

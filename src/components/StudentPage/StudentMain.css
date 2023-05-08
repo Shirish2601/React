@@ -91,6 +91,16 @@
   width: 700px;
 }
 
+.loading-with-button__create-drive {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
 .studentmain-form-content button {
   width: 200px;
   height: 40px;

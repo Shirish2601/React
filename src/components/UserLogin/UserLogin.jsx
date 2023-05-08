@@ -59,22 +59,38 @@ const UserLogin = (props) => {
         setError(err.message);
       }
       setIsLoading(false);
-    } else if (
-      emailRef.current.value === "abc1" &&
-      passwordRef.current.value === "abc1" &&
-      props.userRole === "admin"
-    ) {
+    } else if (props.userRole === "admin") {
       emailRef.current.value = "";
       passwordRef.current.value = "";
-      ctx.login();
-      ctx.userTypeHandler("admin");
-      ctx.userType = "admin";
-      ctx.isLoggedIn = true;
-      userData.authorized = true;
-    } else {
-      userData.authorized = false;
+      try {
+        setIsLoading(true);
+        const response = await fetch("http://localhost:5500/api/admin/login", {
+          method: "POST",
+          body: JSON.stringify({
+            email: userData.email,
+            password: userData.password,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (!response.ok) {
+          const error = await response.json();
+          setError(error.message);
+        } else {
+          const data = await response.json();
+          const admin = data.admin;
+          ctx.login(admin);
+          ctx.isLoggedIn = true;
+          ctx.userTypeHandler("admin");
+          ctx.userType = "admin";
+          userData.authorized = true;
+        }
+      } catch (err) {
+        setError(err.message);
+      }
+      setIsLoading(false);
     }
-    setAuthorized(userData.authorized);
   };
 
   return (
