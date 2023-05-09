@@ -17,8 +17,8 @@
   align-items: center;
 }
 .company-info img {
-  max-width: 200px;
-  max-height: 200px;
+  width: 150px;
+  height: 100px;
   margin-right: 20px;
 }
 .company-description h3 {

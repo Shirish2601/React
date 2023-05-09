@@ -18,7 +18,6 @@ const AdminHome = () => {
           setError(error.message);
         } else {
           const data = await response.json();
-          console.log(data);
           setData(data);
         }
       } catch (err) {
