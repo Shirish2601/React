@@ -18,6 +18,7 @@ const AdminHome = () => {
           setError(error.message);
         } else {
           const data = await response.json();
+          data.drives.reverse();
           setData(data);
         }
       } catch (err) {
@@ -45,7 +46,7 @@ const AdminHome = () => {
 
         {data &&
           data.drives.length > 0 &&
-          data.drives.map((drive) => {
+          data.drives.reverse().map((drive) => {
             return (
               <React.Fragment key={drive._id}>
                 <Card

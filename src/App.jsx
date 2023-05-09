@@ -23,6 +23,7 @@ import AdminHome from "./components/Admin/AdminHome/AdminHome";
 import CreateDrive from "./components/Admin/CreateDrive/CreateDrive";
 import AppliedStudents from "./components/Admin/AppliedStudents/AppliedStudents";
 import StudentSettings from "./components/StudentPage/StudentSettings";
+import EligibleStudents from "./components/Admin/EligibleStudents/EligibleStudents";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userType, setUserType] = useState("");
@@ -45,7 +46,6 @@ function App() {
   let adminRoutes;
   let userRoutes;
   let routes;
-
   if (isLoggedIn && userType === "admin") {
     adminRoutes = (
       <React.Fragment>
@@ -59,6 +59,9 @@ function App() {
           </Route>
           <Route path="/admin/company/:id/" exact>
             <ViewCompany />
+          </Route>
+          <Route path="/admin/company/:id/eligible/" exact>
+            <EligibleStudents />
           </Route>
           <Route path="/admin/company/:id/applied/" exact>
             <AppliedStudents />
@@ -83,7 +86,7 @@ function App() {
           <Route path="/student/cregister/" exact>
             <CompanyRegister />
           </Route>
-          <Route path="/company/:id/" exact>
+          <Route path="/student/company/:id/" exact>
             <ViewCompany />
           </Route>
           <Route path="/student/settings/" exact>

@@ -4,6 +4,13 @@ import { AuthContext } from "../components/context/auth-context";
 
 import Styles from "./Card.module.css";
 const Card = (props) => {
+  const changeDateFormat = (newdate) => {
+    const date = new Date(newdate);
+    const options = { day: "numeric", month: "long", year: "numeric" };
+    const formatter = new Intl.DateTimeFormat("en-US", options);
+    const formattedDate = formatter.format(date);
+    return formattedDate;
+  };
   const ctx = useContext(AuthContext);
 
   return (
@@ -25,16 +32,16 @@ const Card = (props) => {
               className="fa-regular fa-calendar"
               style={{ color: "#364fc7" }}
             ></i>{" "}
-            &nbsp; {props.date}
+            &nbsp; {changeDateFormat(props.date)}
           </span>
           <span>Salary: {props.salary}</span>
         </div>
-        <h3 className={`${Styles["job-title"]}`}>Job Title</h3>
+        <h3 className={`${Styles["job-title"]}`}>{props.jobtitle}</h3>
         <p>{props.aboutcompany}</p>
         <div>
           {ctx.userType === "student" && (
-            <Link to="/company/1/">
-              <button className={`${Styles["btn-apply"]}`}>Apply Now</button>
+            <Link to={`/student/company/${props.id}`}>
+              <button className={`${Styles["btn-apply"]}`}>View</button>
             </Link>
           )}
           {ctx.userType === "admin" && (

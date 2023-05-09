@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Styles from "./AppliedStudents.module.css";
+import Styles from "./EligibleStudents.module.css";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { useParams } from "react-router-dom";
 const AppliedStudents = () => {
@@ -25,45 +25,26 @@ const AppliedStudents = () => {
       }
     };
     getCompanyDetails();
-    const getStudentsData = async () => {
+    const getEligibleStudents = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5500/api/admin/appliedstudents/${cid.id}`
+          `http://localhost:5500/api/admin/eligiblestudents/${cid.id}`
         );
         if (!response.ok) {
           const error = await response.json();
           throw new Error(error.message);
         } else {
           const data = await response.json();
-          const newArray = [].concat.apply([], data.appliedstudents);
+          const newArray = [].concat.apply([], data.eligiblestudents);
           setStudentsData(newArray);
         }
       } catch (err) {
         console.log(err);
       }
     };
-    getStudentsData();
+    getEligibleStudents();
   }, []);
-  // const rows = [
-  //   {
-  //     id: 0,
-  //     prn: "20UCS001",
-  //     name: "SHIRISH MANOHAR HADPAD",
-  //     branch: "COMPUTER SCIENCE AND ENGINEERING",
-  //     cgpa: 9,
-  //     resume: "VIEW",
-  //     batch: 2024,
-  //   },
-  //   {
-  //     id: 1,
-  //     prn: "20UCS002",
-  //     name: "AHIRISH MANOHAR HADPAD",
-  //     branch: "COMPUTER SCIENCE AND ENGINEERING",
-  //     cgpa: 7,
-  //     resume: "VIEW",
-  //     batch: 2024,
-  //   },
-  // ];
+
   const columns = [
     { field: "prn", headerName: "PRN", width: 150 },
     { field: "name", headerName: "Name", width: 250 },
@@ -119,7 +100,7 @@ const AppliedStudents = () => {
       {companyData && (
         <div className={`marginleft` + ` ${Styles["applied-students"]}`}>
           <h3>
-            Applied Students for{" "}
+            Eligible Students for{" "}
             <span>{companyData.companydetails.companydetails.companyname}</span>
           </h3>
           <DataGrid
@@ -135,57 +116,11 @@ const AppliedStudents = () => {
             slots={{
               toolbar: GridToolbar,
             }}
+            pageSizeOptions={[200, 300]}
           />
         </div>
       )}
     </React.Fragment>
-    // <DataGrid rows={5} columns={5} pageSize={5} />
-    // <div className={`marginleft` + ` ${Styles["applied-students"]}`}>
-    //   <h3>
-    //     Applied Students for <span>ABC</span>
-    //   </h3>
-    //   <div className={`${Styles["table-students"]}`}>
-    //     <table>
-    //       <tbody>
-    //         <tr>
-    //           <th>PRN</th>
-    //           <th>Name</th>
-    //           <th>Branch</th>
-    //           <th>CGPA</th>
-    //           <th>Resume</th>
-    //           <th>Passout Batch</th>
-    //           <th>Select</th>
-    //         </tr>
-    //       </tbody>
-    //       <tbody>
-    //         <tr onClick={setSelectedRowsHandler}>
-    //           <td>20UCS001</td>
-    //           <td>SHIRISH MANOHAR HADPAD</td>
-    //           <td>COMPUTER SCIENCE AND ENGINEERING</td>
-    //           <td>8.00</td>
-    //           <td>VIEW</td>
-    //           <td>2024</td>
-    //           <td>
-    //             <input type="checkbox" checked={selectedCheckbox.includes(0)} />
-    //           </td>
-    //         </tr>
-    //       </tbody>
-    //       <tbody>
-    //         <tr onClick={setSelectedRowsHandler}>
-    //           <td>20UCS001</td>
-    //           <td>SHIRISH MANOHAR HADPAD</td>
-    //           <td>COMPUTER SCIENCE AND ENGINEERING</td>
-    //           <td>8.00</td>
-    //           <td>VIEW</td>
-    //           <td>2024</td>
-    //           <td>
-    //             <input type="checkbox" checked={selectedCheckbox.includes(1)} />
-    //           </td>
-    //         </tr>
-    //       </tbody>
-    //     </table>
-    //   </div>
-    // </div>
   );
 };
 

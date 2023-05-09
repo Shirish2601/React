@@ -15,6 +15,7 @@ const StudentMain = () => {
     }, 1200);
     return () => clearTimeout(timer);
   }, [error, success]);
+
   const [user, setUser] = useState(ctx.user);
   const cityRef = useRef();
   const stateRef = useRef();

@@ -88,6 +88,8 @@ const CreateDrive = () => {
           passoutbatch: data.passoutbatch,
           recruitingfor: data.recruitingfor,
           tentativejoiningdate: data.tentativejoiningdate,
+          jobtitle: data.jobtitle,
+          joblocation: data.joblocation,
           jobdescription: data.jobdescription,
           eligiblebranches: data.eligibleBranches,
           minimumcgpa: data.minimumcgpa,
@@ -356,6 +358,26 @@ const CreateDrive = () => {
               </div>
             </div>
             <div className={`${Styles["create-drive__form__company-details"]}`}>
+              <div className={`${Styles["form-content"]}`}>
+                <label htmlFor="joblocation">Job Location</label>
+                <input
+                  placeholder="Enter Job Location"
+                  type="text"
+                  id="joblocation"
+                  name="joblocation"
+                ></input>
+              </div>
+              <div className={`${Styles["form-content"]}`}>
+                <label htmlFor="jobtitle">Job Title</label>
+                <input
+                  placeholder="Enter Job Title"
+                  type="text"
+                  id="jobtitle"
+                  name="jobtitle"
+                ></input>
+              </div>
+            </div>
+            <div className={`${Styles["create-drive__form__company-details"]}`}>
               <div
                 className={`${Styles["create-drive__form__company-details"]}`}
               >
@@ -479,7 +501,8 @@ const CreateDrive = () => {
                   <input
                     id="minimum10thpercentage"
                     type="text"
-                    placeholder="Enter Minimum CGPA"
+                    name="minimum10thpercentage"
+                    placeholder="Enter Minimum 10th Percentage"
                   />
                   <div className={`${Styles["grey-box"]}`}>
                     <span>10th%</span>
@@ -502,7 +525,7 @@ const CreateDrive = () => {
                     id="minimum12thpercentage"
                     name="minimum12thpercentage"
                     type="text"
-                    placeholder="Enter Minimum CGPA"
+                    placeholder="Enter Minimum 12th Percentage"
                   />
                   <div className={`${Styles["grey-box"]}`}>
                     <span>12th%</span>
@@ -534,15 +557,13 @@ const CreateDrive = () => {
               <div
                 className={`${Styles["form-content"]} ${Styles["less-width"]}`}
               >
-                <label htmlFor="minimumlivebacklogs">
-                  Enter minimum Backlogs
-                </label>
+                <label htmlFor="minimumbacklogs">Enter Backlogs</label>
                 <div className={`${Styles["newinput"]}`}>
                   <input
-                    id="minimumlivebacklogs"
-                    name="minimumlivebacklogs"
+                    id="minimumbacklogs"
+                    name="minimumbacklogs"
                     type="text"
-                    placeholder="Enter Minimum Backlogs"
+                    placeholder="Enter Backlogs"
                   />
                   <div className={`${Styles["grey-box"]}`}>
                     <span>Backlogs</span>
@@ -552,15 +573,13 @@ const CreateDrive = () => {
               <div
                 className={`${Styles["form-content"]} ${Styles["less-width"]}`}
               >
-                <label htmlFor="minimumlivebacklogs">
-                  Enter minimum Live Backlogs
-                </label>
+                <label htmlFor="minimumlivebacklogs">Enter Live Backlogs</label>
                 <div className={`${Styles["newinput"]}`}>
                   <input
                     id="minimumlivebacklogs"
                     name="minimumlivebacklogs"
                     type="text"
-                    placeholder="Enter Minimum Live Backlogs"
+                    placeholder="Enter Live Backlogs"
                   />
                   <div className={`${Styles["grey-box"]}`}>
                     <span>Backlogs</span>
