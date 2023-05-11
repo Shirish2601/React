@@ -116,7 +116,8 @@ const AppliedStudents = () => {
             slots={{
               toolbar: GridToolbar,
             }}
-            pageSizeOptions={[200, 300]}
+            // pageSizeOptions={[200, 300]}
+            getRowId={(row) => row.id}
           />
         </div>
       )}

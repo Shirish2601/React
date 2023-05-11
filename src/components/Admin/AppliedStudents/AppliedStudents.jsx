@@ -82,9 +82,9 @@ const AppliedStudents = () => {
     { field: "livebacklogs", headerName: "Live Backlogs", width: 150 },
   ];
 
-  const newRows = studentsData.map((student) => {
+  const newRows = studentsData.map((student, index) => {
     return {
-      id: student._id,
+      id: student._id || index,
       prn: student.prn,
       name: student.name,
       branch: student.stream,
